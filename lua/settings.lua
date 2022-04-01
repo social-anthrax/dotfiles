@@ -25,5 +25,5 @@ vim.o.guicursor=''
 vim.o.number = true
 
 -- must add settings before loading
-vim.g.tokyonight_transparent = true
+-- vim.g.tokyonight_transparent = true
 vim.cmd[[colorscheme tokyonight]]
