@@ -9,7 +9,7 @@ return require('packer').startup(function()
   -- Collection of common configurations for the Nvim LSP client
   use 'neovim/nvim-lspconfig'
 
-  -- Completion framework
+  -- Snippet completion
   use 'hrsh7th/nvim-cmp'
 
   -- LSP completion source for nvim-cmp
@@ -74,4 +74,7 @@ return require('packer').startup(function()
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+
+  -- Tmux integration
+  use 'vimpostor/vim-tpipeline'
 end)

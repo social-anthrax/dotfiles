@@ -1,0 +1,1 @@
+/home/social_anthrax/.fzf/shell/key-bindings.fish
