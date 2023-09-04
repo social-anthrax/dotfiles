@@ -1,7 +1,4 @@
-require('plugins')
-require('lsp')
-require('rustlsp')
-require('tree')
-require('keymap')
-require('evil_lualine')
-require('settings')
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true   
+
