@@ -1,0 +1,21 @@
+[helpers]
+
+[default]
+depends = ["fish", "tmux", "bat", "nvim"]
+
+[default.files]
+
+[default.variables]
+
+[fish.files]
+"fish/fish_plugins" = "~/.config/fish/fish_plugins"
+"fish/functions/typora.fish" = "~/.config/fish/functions/typora.fish"
+
+[tmux.files]
+"tmux.conf" = "~/.tmux.conf"
+
+[bat.files]
+bat = "~/.config/bat/config"
+
+[nvim.files]
+nvim = "~/.config/nvim"
