@@ -18,7 +18,7 @@ mkdir ~/envs; pushd ~/envs
 git clone git@github.com:social-anthrax/pwn-env.git
 
 
-if set -q _flag_poetry)
+if set -q _flag_poetry
     echo "Poetry flag set, attempting to use poetry"
     if command -qs poetry
         if not poetry install
