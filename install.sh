@@ -3,13 +3,13 @@
 argparse --name="install.sh" poetry pwn_env -- $argv
 
 if not test -e ./.dotter/local.toml
-    set -l local_toml (echo """includes = []
+    set -l local_toml (echo '''includes = []
     packages = ["default"]
 
     [files]
 
     [variables]
-    """ | string split \n | string trim -l | string collect)
+    ''' | string split \n | string trim -l | string collect)
 
     echo $local_toml >./.dotter/local.toml
 end
