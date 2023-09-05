@@ -2,6 +2,15 @@
 
 argparse --name="install.sh" poetry pwn_env -- $argv
 
+# Install fisher first
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+
+# If the fish plugins file isn't a symlink then delete it
+if not test -L $__fish_config_dir/fish_plugins
+    rm $__fish_config_dir/fish_plugins # Remove existing plugins file 
+end
+
+# Set up the local file for dotter. This one simply installs the default dependencies
 if not test -e ./.dotter/local.toml
     set -l local_toml (echo '''includes = []
     packages = ["default"]
@@ -21,11 +30,10 @@ else
     ./dotter
 end
 
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 fisher update
 tide configure --auto --style=Classic --prompt_colors='True color' --classic_prompt_color=Lightest --show_time='24-hour format' --classic_prompt_separators=Angled --powerline_prompt_heads=Sharp --powerline_prompt_tails=Flat --powerline_prompt_height='Two lines' --prompt_connection=Disconnected --powerline_prompt_frame='No frame' --prompt_spacing=Sparse --icons='Many icons'
 
-# Download pwn-env into ~/envs but don't automatically install it
+# Optionally download pwn-env into ~/envs but don't automatically install it
 if set -q _flag_pwn_env
     mkdir ~/envs
     pushd ~/envs
