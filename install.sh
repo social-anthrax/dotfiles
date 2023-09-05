@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-argparse --name="install.sh" "poetry" -- $argv
+argparse --name="install.sh" "poetry" "pwn_env" -- $argv
 
 # Install configs with dotter
 if test (arch) = "arm64"
@@ -14,21 +14,23 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 tide configure --auto --style=Classic --prompt_colors='True color' --classic_prompt_color=Lightest --show_time='24-hour format' --classic_prompt_separators=Angled --powerline_prompt_heads=Sharp --powerline_prompt_tails=Flat --powerline_prompt_height='Two lines' --prompt_connection=Disconnected --powerline_prompt_frame='No frame' --prompt_spacing=Sparse --icons='Many icons'
 
 # Download pwn-env into ~/envs but don't automatically install it
-mkdir ~/envs; pushd ~/envs
-git clone git@github.com:social-anthrax/pwn-env.git
+if set -q _flag_pwn_env
+    mkdir ~/envs; pushd ~/envs
+    git clone git@github.com:social-anthrax/pwn-env.git
 
-
-if set -q _flag_poetry
-    echo "Poetry flag set, attempting to use poetry"
-    if command -qs poetry
-        if not poetry install
-            echo "Failed to install pwn-env"
+    # Only install if configured to install
+    if set -q _flag_poetry 
+        echo "Poetry flag set, attempting to use poetry"
+        if command -qs poetry
+            if not poetry install
+                echo "Failed to install pwn-env"
+            else
+                echo "Pwn env installed successfully"
+            end
         else
-            echo "Pwn env installed successfully"
+            echo "Poetry not installed"
         end
-    else
-        echo "Poetry not installed"
     end
-end
 
-popd
+    popd
+end
