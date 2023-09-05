@@ -10,6 +10,7 @@ depends = ["fish", "tmux", "bat", "nvim"]
 [fish.files]
 "fish/fish_plugins" = "~/.config/fish/fish_plugins"
 "fish/functions/typora.fish" = "~/.config/fish/functions/typora.fish"
+"fish/completions/docker" = "~/.config/fish/completions/docker.fish"
 
 [tmux.files]
 "tmux.conf" = "~/.tmux.conf"
