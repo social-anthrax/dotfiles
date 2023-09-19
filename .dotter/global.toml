@@ -1,7 +1,7 @@
 [helpers]
 
 [default]
-depends = ["fish", "tmux", "bat", "nvim"]
+depends = ["fish", "tmux", "bat", "lvim"]
 
 [default.files]
 
@@ -12,11 +12,12 @@ depends = ["fish", "tmux", "bat", "nvim"]
 "fish/functions/" = "~/.config/fish/functions/"
 "fish/completions/docker" = "~/.config/fish/completions/docker.fish"
 
+[lvim.files]
+"lvim/config.lua" = "~/.config/lvim/config.lua"
+
 [tmux.files]
 "tmux.conf" = "~/.tmux.conf"
 
 [bat.files]
 bat = "~/.config/bat/config"
 
-[nvim.files]
-nvim = "~/.config/nvim"

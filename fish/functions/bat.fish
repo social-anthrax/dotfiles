@@ -1,4 +1,6 @@
 function bat --wraps="batcat"
-    batcat $argv
+    if not (which bat) 
+        batcat $argv
+    end
 end
 
