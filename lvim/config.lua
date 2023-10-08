@@ -30,7 +30,12 @@ lvim.plugins = {
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-    }
+    opts = {}
+  },
+  {
+    url = 'https://codeberg.org/esensar/nvim-dev-container',
+    dependencies = 'nvim-treesitter/nvim-treesitter'
   }
 }
+
+require("devcontainer").setup {}
