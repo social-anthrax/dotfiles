@@ -32,10 +32,4 @@ lvim.plugins = {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {}
   },
-  {
-    url = 'https://codeberg.org/esensar/nvim-dev-container',
-    dependencies = 'nvim-treesitter/nvim-treesitter'
-  }
 }
-
-require("devcontainer").setup {}
