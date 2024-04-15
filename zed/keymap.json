@@ -1,0 +1,7 @@
+[
+  {
+    "bindings": {
+      "cmd-e": "project_panel::ToggleFocus"
+    }
+  }
+]

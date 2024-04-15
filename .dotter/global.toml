@@ -7,6 +7,11 @@ depends = ["fish", "tmux", "bat", "lvim"]
 
 [default.variables]
 
+[zed.files]
+"zed/themes" = "~/.config/zed/themes"
+"zed/settings.json" = "~/.config/zed/settings.json"
+"zed/keymap.json" = "~/.config/zed/keymap.json"
+
 [fish.files]
 "fish/fish_plugins" = "~/.config/fish/fish_plugins"
 "fish/functions/" = "~/.config/fish/functions/"
