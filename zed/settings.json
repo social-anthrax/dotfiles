@@ -7,12 +7,68 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "One Dark",
-  "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
+  ////////////////////////////
+  // Editor View Settings
+  ////////////////////////////
+  "theme": "Tokyo Night Storm",
+  "ui_font_size": 14,
+  "buffer_font_size": 13.2,
   "hour_format": "hour24",
+  "buffer_font_family": "Hack Nerd Font",
   "terminal": {
-    "font_family": "Hack Nerd Font Mono"
+    "font_family": "Hack Nerd Font",
+    "font_size": 12
+  },
+  "relative_line_numbers": true,
+  "telemetry": {
+    "diagnostics": false
+  },
+
+  ////////////////////////////
+  // Editor Settings
+  ////////////////////////////
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "on_yank"
+  },
+  "format_on_save": "on",
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "edit_debounce_ms": 700,
+    "scroll_debounce_ms": 50
+  },
+
+  ////////////////////////////
+  // Collaboration Settings
+  ////////////////////////////
+  "calls": {
+    // Join calls with the microphone live by default
+    "mute_on_join": true,
+    // Share your project when you are the first to join a channel
+    "share_on_join": true
+  },
+
+  ////////////////////////////
+  // Language Server Settings
+  ////////////////////////////
+
+  "languages": {
+    "OCaml": {
+      "show_copilot_suggestions": true
+    },
+    "Typst": {
+      "soft_wrap": "preferred_line_length",
+      "preferred_line_length": 88,
+      "format_on_save": "off",
+      "formatter": {
+        "external": {
+          "command": "typstfmt",
+          "arguments": []
+        }
+      }
+    }
   }
 }

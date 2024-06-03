@@ -1,7 +1,18 @@
 [
+  /////////////////
+  // Vim bindings
   {
     "bindings": {
-      "cmd-e": "project_panel::ToggleFocus"
+      "cmd-e": "project_panel::ToggleFocus",
+      "ctrl-w v": "pane::SplitRight"
+    }
+  },
+  {
+    // netrw compatibility
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory"
     }
   }
 ]
