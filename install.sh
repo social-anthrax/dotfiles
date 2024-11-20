@@ -7,7 +7,7 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 
 # If the fish plugins file isn't a symlink then delete it
 if not test -L $__fish_config_dir/fish_plugins
-    rm $__fish_config_dir/fish_plugins # Remove existing plugins file 
+    rm $__fish_config_dir/fish_plugins # Remove existing plugins file
 end
 
 # Set up the local file for dotter. This one simply installs the default dependencies
@@ -29,6 +29,8 @@ if test (arch) = arm64
 else
     ./dotter
 end
+
+fish_add_path ~/.local/bin
 
 fisher update
 tide configure --auto --style=Classic --prompt_colors='True color' --classic_prompt_color=Dark --show_time='24-hour format' --classic_prompt_separators=Vertical --powerline_prompt_heads=Sharp --powerline_prompt_tails=Flat --powerline_prompt_style='Two lines, character' --prompt_connection=Disconnected --powerline_right_prompt_frame=No --prompt_spacing=Sparse --icons='Many icons' --transient=No

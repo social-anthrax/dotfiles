@@ -1,0 +1,14 @@
+#!/usr/bin/env amber
+import * from "std/env"
+
+
+main(args) {
+
+    $docker pull plantuml/plantuml-server:jetty$ failed {
+        error("Failed to pull plantuml/plantuml-server:jetty", status)
+    }
+
+    $docker run -d --name "plantuml_server" -p 8087:8080 plantuml/plantuml-server:jetty$?
+
+    echo_success("plantuml server has started on 8087")
+}

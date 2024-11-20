@@ -1,0 +1,25 @@
+#!/usr/bin/env amber
+
+import { split, replace } from "std/text"
+import { create_dir } from "std/fs"
+import { echo_warning } from "std/env"
+
+let output_dir = "./outputs/"
+
+main(args) {
+    let files = split( $ ls -1 *.ab$?, "\n")
+
+    create_dir(output_dir)
+
+    loop file in files {
+    // Skip the compile_all.ab file
+    if file == "compile_all.ab" {
+            continue
+        }
+
+        let new_file = replace(file, ".ab", ".sh")
+        $amber {file} {output_dir}{new_file}$ failed {
+            echo_warning("Failed to compile {file}")
+        }
+    }
+}
