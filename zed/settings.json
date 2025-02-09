@@ -10,6 +10,13 @@
   ////////////////////////////
   // Editor View Settings
   ////////////////////////////
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
   "theme": "Tokyo Night Storm",
   "ui_font_size": 14,
   "buffer_font_size": 13.2,
@@ -67,6 +74,19 @@
         "external": {
           "command": "typstfmt",
           "arguments": []
+        }
+      }
+    }
+  },
+
+  ////////////////////////////
+  // LSP Settings
+  ///////////////////////////
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "checkOnSave": {
+          "command": "clippy"
         }
       }
     }
