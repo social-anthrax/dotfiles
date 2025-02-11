@@ -18,5 +18,4 @@ main(main_args) {
     file_chmod("{filename}", "+x")
 
     echo "Complete"
-
 }
