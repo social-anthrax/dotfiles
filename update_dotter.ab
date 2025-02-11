@@ -1,0 +1,22 @@
+import { file_chmod } from "std/fs"
+
+
+main(main_args) {
+    let filename = "dotter"
+    $curl -L https://github.com/SuperCuber/dotter/releases/latest/download/dotter-macos-arm64.arm -o {filename}.arm$ failed { 
+        echo "Failed to download arm version of dotter"
+        exit(status)
+    }
+
+    file_chmod("{filename}.arm", "+x")
+
+    $curl -L https://github.com/SuperCuber/dotter/releases/latest/download/dotter-linux-x64-musl -o {filename} $ failed { 
+        echo "Failed to download linux version of dotter"
+        exit(status)
+    }
+
+    file_chmod("{filename}", "+x")
+
+    echo "Complete"
+
+}
